@@ -1,0 +1,14 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import i18next, { t } from "i18next";
+
+let { lang } = Astro.params;
+
+if (lang !== i18next.language) {
+  i18next.changeLanguage(lang);
+}
+---
+
+<Layout title={t("home.title")}>
+  <h1 class="text-4xl font-bold">{t("home.title")}</h1>
+</Layout>
