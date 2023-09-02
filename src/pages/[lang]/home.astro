@@ -1,4 +1,5 @@
 ---
+import Counter from "../../components/Counter";
 import Layout from "../../layouts/Layout.astro";
 import i18next, { t } from "i18next";
 
@@ -11,4 +12,6 @@ if (lang !== i18next.language) {
 
 <Layout title={t("home.title")}>
   <h1 class="text-4xl font-bold">{t("home.title")}</h1>
+
+  <Counter initial={50} interval={-10} client:load />
 </Layout>
