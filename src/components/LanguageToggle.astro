@@ -4,4 +4,6 @@ let { pathname } = Astro.url;
 let path = pathname.replace(/\/(en|fr)\//, "");
 ---
 
-<a href=`/${lang==='en' ? 'fr' :'en'}/${path}`>{lang === "en" ? "fr" : "en"}</a>
+<a href=`/${lang==='en' ? 'fr' :'en'}/${path}` class="underline"
+  >{lang === "en" ? "Français" : "English"}</a
+>

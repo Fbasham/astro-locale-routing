@@ -1,6 +1,6 @@
 ---
 import i18next from "i18next";
-import LanguageToggle from "../components/LanguageToggle.astro";
+import Header from "../components/Header.astro";
 
 interface Props {
   title: string;
@@ -18,10 +18,13 @@ if (lang !== i18next.language) {
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
+    <link rel="icon" href="/assets/favicon.ico" />
     <title>{title}</title>
   </head>
   <body>
-    <LanguageToggle />
-    <slot />
+    <Header />
+    <main class="p-10">
+      <slot />
+    </main>
   </body>
 </html>

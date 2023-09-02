@@ -2,11 +2,36 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
+    <link rel="icon" href="/assets/favicon.ico" />
     <title>Astro i18n routing</title>
   </head>
-  <body>
-    <a href="/en/home">English</a>
-    <br />
-    <a href="/fr/home">Français</a>
+  <body
+    class="bg-[url('/assets/sp-bg-1.jpg')] grid place-content-center h-[100vh]"
+  >
+    <div class="bg-white p-10">
+      <img src="/assets/symbol_goc.svg" class="h-8 mb-10" />
+      <div class="flex gap-10 justify-center">
+        <a
+          href="/en/home"
+          class="bg-blue-950 text-white py-3 px-5 inline-block rounded-md border-b-2 border-gray-200 hover:bg-blue-900"
+          >English</a
+        >
+        <a
+          href="/fr/home"
+          class="bg-blue-950 text-white py-3 px-5 inline-block rounded-md border-b-2 border-gray-200 hover:bg-blue-900"
+          >Français</a
+        >
+      </div>
+    </div>
+    <div class="bg-gray-300 flex p-5">
+      <div class="grow flex gap-2 items-center">
+        <a href="https://www.canada.ca/en/transparency/terms.html"
+          >Terms &amp; conditions</a
+        >
+        <span>&bull;</span>
+        <a href="https://www.canada.ca/fr/transparence/avis.html">Avis</a>
+      </div>
+      <img src="/assets/wmms-blk.svg" class="h-8" />
+    </div>
   </body>
 </html>
