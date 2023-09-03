@@ -1,4 +1,5 @@
 ---
+// @ts-nocheck
 import Layout from "../../../layouts/Layout.astro";
 import { getEntry } from "astro:content";
 
@@ -10,5 +11,7 @@ let { Content } = await entry.render();
 ---
 
 <Layout title={entry.data.title}>
-  <Content />
+  <div class="prose">
+    <Content />
+  </div>
 </Layout>

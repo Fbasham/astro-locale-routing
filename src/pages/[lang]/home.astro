@@ -1,17 +1,34 @@
 ---
+// @ts-nocheck
 import Counter from "../../components/Counter";
 import Layout from "../../layouts/Layout.astro";
 import i18next, { t } from "i18next";
+import { getCollection } from "astro:content";
 
 let { lang } = Astro.params;
 
 if (lang !== i18next.language) {
   i18next.changeLanguage(lang);
 }
+
+let posts = await getCollection(lang);
 ---
 
 <Layout title={t("home.title")}>
   <h1 class="text-4xl font-bold">{t("home.title")}</h1>
 
   <Counter initial={50} interval={-10} client:load />
+
+  <h2 class="mt-5 font-semibold text-xl">Blog Posts</h2>
+  <ul>
+    {
+      posts.map((post) => (
+        <li>
+          <a href={post.slug} class="underline text-sm">
+            {post.data.title}
+          </a>
+        </li>
+      ))
+    }
+  </ul>
 </Layout>

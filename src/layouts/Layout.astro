@@ -2,6 +2,7 @@
 import i18next from "i18next";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
+import Breadcrumb from "../components/Breadcrumb.astro";
 
 interface Props {
   title: string;
@@ -24,6 +25,7 @@ if (lang !== i18next.language) {
   </head>
   <body class="h-[100vh]">
     <Header />
+    <Breadcrumb />
     <main class="p-10">
       <slot />
     </main>
