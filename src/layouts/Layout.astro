@@ -1,6 +1,7 @@
 ---
 import i18next from "i18next";
 import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
 
 interface Props {
   title: string;
@@ -21,10 +22,11 @@ if (lang !== i18next.language) {
     <link rel="icon" href="/assets/favicon.ico" />
     <title>{title}</title>
   </head>
-  <body>
+  <body class="h-[100vh]">
     <Header />
     <main class="p-10">
       <slot />
     </main>
+    <Footer />
   </body>
 </html>
