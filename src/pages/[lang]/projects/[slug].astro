@@ -1,0 +1,17 @@
+---
+// @ts-nocheck
+import Layout from "../../../layouts/Layout.astro";
+import { getEntry } from "astro:content";
+
+let { lang, slug } = Astro.params;
+
+let entry = await getEntry(lang, `projects/${slug}`);
+
+let { Content } = await entry.render();
+---
+
+<Layout title={entry.data.title}>
+  <div class="prose">
+    <Content />
+  </div>
+</Layout>

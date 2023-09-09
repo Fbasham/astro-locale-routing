@@ -12,6 +12,8 @@ if (lang !== i18next.language) {
 }
 
 let posts = await getCollection(lang);
+
+console.log(posts);
 ---
 
 <Layout title={t("home.title")}>

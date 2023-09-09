@@ -23,10 +23,10 @@ if (lang !== i18next.language) {
     <link rel="icon" href="/assets/favicon.ico" />
     <title>{title}</title>
   </head>
-  <body class="h-[100vh]">
+  <body class="h-[100vh] flex flex-col">
     <Header />
     <Breadcrumb />
-    <main class="p-10">
+    <main class="p-10 grow">
       <slot />
     </main>
     <Footer />
